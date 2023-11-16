@@ -1,0 +1,61 @@
+<% layout("/layouts/boilerplate") -%>
+<style>
+
+.signup-icon{
+  font-size: 40px;
+}
+.signup-icon img{
+        width: 40px;
+}
+.btn{
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e61e4d ;
+}
+
+</style>
+
+<div class="row mt-5 mx-auto">
+    
+    <div class="col-md-8 mx-auto">
+        <h2 class="signup-icon ">Signup <img src="/icons/circle.png" alt="">n Airbnb</h2>
+        <form action="/signup" method="post" class="needs-validation" novalidate>
+
+            <div class="mb-3">
+                <label for="username" class="form-label"><b>Username</b></label>
+                <input type="text" name="username" id="username" class="form-control" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="email" class="form-label"><b>Email</b></label>
+                <input type="email" name="email" id="email" class="form-control" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+
+
+
+            <div class="mb-3">
+                <label for="password" class="form-label"><b>password</b></label>
+                <input type="password" name="password" id="password" class="form-control" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+            
+                <div class="confirmation">
+                    <p>We’ll text you to confirm your email id. Standard message and data rates apply. Privacy Policy   <input type="radio" required></p> 
+                  
+                </div>
+                <hr>
+
+            <button class="btn btn-success col-8 offset-2 mb-2 mt-2">Continue</button>
+            
+        </form>
+    </div>
+</div>

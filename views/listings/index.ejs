@@ -1,0 +1,186 @@
+<% layout("/layouts/boilerplate") -%> 
+<body>
+
+        <div class="filter-main">
+      <div class="filters">
+        <div class="filter">
+          <img src="/icons/icon2.png" alt="">
+         <p>ALL</p>
+        </div>
+
+        <div class="filter">
+          <!-- <div><i class="fa-solid fa-bed"></i></div> -->
+          <img src="/icons/icon1.png" alt="">
+          <p>OMG!</p>
+        </div>
+
+        <div class="filter">
+          <img src="/icons/icon3.png" alt="">
+          <p>parks</p>
+        </div>
+
+
+        <div class="filter">
+          <img src="/icons/icon4.png" alt="">
+          <p>Amazing</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon5.png" alt="">
+          <p>vineyards</p>
+        </div>
+
+        <div class="filter" id="hide" >
+          <img src="/icons/icon6.png" alt="">
+          <p>Rooms</p>
+        </div>
+
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon7.png" alt="">
+          <p>Farms</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon8.jpg" alt="">
+          <p>Amazing pools</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon9.png" alt="">
+          <p>Breakfasts</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon10.jpg" alt="">
+          <p>Desert</p>
+        </div>
+
+
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon11.jpg" alt="">
+          <p>Tropical</p>
+        </div>
+
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon12.png" alt="">
+          <p>Castles</p>
+        </div>
+
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon13.png" alt="">
+          <p>Trending</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon14.png" alt="">
+          <p>Camping</p>
+        </div>
+
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon15.png" alt="">
+          <p>Luxe</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon16.png" alt="">
+          <p>Lake</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon17.png" alt="">
+          <p>Design</p>
+        </div>
+
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon18.png" alt="">
+          <p>Cabins</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon19.png" alt="">
+          <p>Beach pool</p>
+        </div>
+
+        <div class="filter" id="hide">
+          <img src="/icons/icon20.png" alt="">
+          <p>Floor</p>
+        </div>
+
+
+
+
+      </div>
+        
+
+
+
+        <div class="filter-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3h9.05zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8h2.05zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1h9.05z"/>
+          </svg>
+          <div><p>Filter</p></div>
+        </div>
+
+
+        <div class="tax-toggle">
+          <div class="form-check-reverse form-switch" id="tax-res">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+          </div>          
+        </div>
+      
+
+        </div>
+
+        
+    <div class="row row-cols-xxl-4 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-1">
+        <%for(let listings of AllListings){%>
+          <a href="/listings/<%=listings._id%>" class="listings-links">
+           
+            <div class="card col listing-card" >
+              <div id="cards">  <img src="<%=listings.image.url%>" class="card-img-top" alt="listings-image" style="height: 20rem;"></div>
+              <div class="cards-info mt-3" style="margin-left: 10px">
+                <div class="card-body">
+                  <p class="card-text">
+                    <b><%= listings.title %></b> <br>
+                    <%= listings.location %>, <%= listings.country %> <br>
+                  
+                    <% if (listings.price !== null) { %>
+                        &#8377; <b><%= listings.price.toLocaleString("en-IN") %></b> / Night
+                        <!-- <div class="tax_info">&nbsp; &nbsp; +18% GST</div> -->
+                        <i class="tax_info">&nbsp; &nbsp;+18% GST</i>
+                    <% } else { %>
+                        Price not available
+                    <% } %>
+                </p>
+                </div>
+              </div>
+              </div>
+            </a>
+              <%}%>
+    </div>   
+    
+    <script>
+      let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+      taxSwitch.addEventListener("click",()=>{
+       let taxInfo = document.getElementsByClassName("tax_info");
+      
+       for (info of taxInfo){
+        if( info.style.display != "inline"){
+          info.style.display = "inline";
+        }
+         else{
+          info.style.display ="none";
+         }
+       }
+      })
+    </script>
+</body>
+
+

@@ -1,0 +1,337 @@
+<% layout("/layouts/boilerplate") -%>
+
+<body>
+     <style>
+
+.description{
+    border: 1px solid black;
+    height: 30vh;
+    margin-top: -10px;
+    border-radius: 20px;
+}
+
+.description p{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.card-body{
+    font-size: 1.rem;
+}
+
+#dis{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.info{
+    font-weight: bold;
+}
+.info1{
+    font-size: 1.2rem;
+}
+.info2{
+    margin-top: -20px ;
+    font-size: 1.2rem;
+}
+
+.back-icon{
+    display: none;
+}
+
+.showimg{
+    height: 55vh;
+}
+/* ///icone */
+.icons{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+#mini-title{
+    font-size: 2.3rem;
+    margin-bottom: 19px;
+} 
+.info3{
+    font-size: 2rem;
+}
+#map{
+    height: 500px;
+    width: 100%;
+    border-radius: 1rem;
+     border: 1px solid rgba(0, 128, 0, 0.428);
+}
+
+#map1{
+    margin: auto;
+}
+#map1 h3{
+    margin-left: 20px;
+}
+
+.reviewStar{
+    margin-top: 10px;
+margin-bottom: 4px;
+}
+
+#reviewPara{
+    text-align: center;
+}
+
+#starss{
+    margin: auto;
+
+}
+@media (max-width : 769px){
+
+.back-icon{                      
+    display: block;
+}
+
+.respon{
+    margin-top: 0.7rem ;
+    margin-left: 1rem;
+}
+
+.respon h1{
+    margin-left: -60px;
+    margin-top: 25px;
+}
+.card img{
+    width: 145% !important;
+    margin-left: -70px;
+    height: 36vh;
+}
+.card-body{
+    width: 145%;
+      margin-left: -75px;
+}
+.btns{
+    margin-left: -55px;
+}
+.description{
+    height: 25vh;
+}
+
+
+.reviewRespon p{
+    margin-left: -2px;
+}
+
+.reviewStar{
+    width: 10vw;
+    font-size: 18vw;
+   height: 3vh;
+}
+
+
+
+#mini-title{
+    font-size: 2.0rem;
+    text-align: center;
+} 
+
+.icons{
+    font-size: 0.9rem;
+}
+
+#map{
+    width: 149%;
+    height: 35vh;
+}
+
+
+
+#starss{
+    width: 87vw;
+margin-left: 16px;
+}
+
+
+
+
+
+.reveee{
+    width: 100%;
+margin-left: -13px;
+}
+}
+
+#review-info{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#review-info p{
+    margin-left: 20px;
+font-size: 18px;
+font-weight: bold;
+}
+
+#reviewPara{
+    text-align: center;
+}
+
+
+
+@media(max-width:769px){
+
+#map1 {
+    margin: 0px;
+}
+}
+
+
+     </style>
+
+
+
+
+
+    <script>
+        const mapToken = "<%= process.env.MAP_TOKEN%>";
+        const listing = <%- JSON.stringify(detail) %>;
+   </script>
+
+    <div class="row mt-3 respon">
+        <div class="back-icon"><a href="http://localhost:8080/listings"><i class="fa-solid fa-chevron-left"></i></a></div>
+        <div class="col-8 offset-2">
+    <h1><%=detail.title%></h1>
+        </div>
+<div class="card col-8 offset-2 listing-card">
+    <img src="<%=detail.image.url%>" class="card-img-top showimg" alt="listing_image">
+    <div class="card-body">
+
+        <div class="card-text mb-2 mt-1"> Owned by <b> <i><%=detail.owner.username %></i></b></div>
+      <p class="card-text">
+
+         <p id="dis">Discription <i class="fa-solid fa-layer-group"></i></p>
+
+         <div class="description">
+            <p><%=detail.description%></p>
+        </div>
+       <br>
+        <div class="info">
+            <div class="info1">City : &nbsp; <%=detail.location%> </div><br>
+            <div class="info2">Country : &nbsp;<%=detail.country%></div><br>
+        </div>
+        <hr>
+        <h4 id="mini-title">What this place offers</h4>
+        <div class="icons">
+           
+            <div class="icon_1 mt-2">
+                <p><i class="fa-solid fa-shop-lock"></i>&nbsp;Lock on bedroom door</p>
+                <p><i class="fa-solid fa-tv"></i>&nbsp;TV</p>
+                <p><i class="fa-solid fa-wifi"></i>&nbsp;WIFI</p>
+                <p><i class="fa-solid fa-bath"></i>&nbsp;BATH</p>
+                <p><i class="fa-solid fa-bell"></i>&nbsp; <s>Carbon monoxide alarm</s></p> 
+            </div>
+            <div class="icon_2 mt-2">
+                <p><i class="fa-solid fa-city"></i>&nbsp;City skyline view</p>
+                <p><i class="fa-solid fa-toilet-portable"></i>&nbsp;Dedicated workspace</p>
+                <p><i class="fa-solid fa-elevator"></i>&nbsp;Lift</p>
+                <p><i class="fa-solid fa-spray-can-sparkles"></i>&nbsp;Spray hair dryer</p>
+                <p><i class="fa-solid fa-ban-smoking"></i>&nbsp; <s>Smoke alarm</s></p> 
+            </div>
+        </div>
+        <hr>
+        <div class="price">
+            <div class="info3"> Final Price &#8377; <%=detail.price.toLocaleString("en-IN")%></div>
+        </div>
+    </p>
+    </div>
+</div>
+  
+    <div class="btns">
+    <a href="/listings/<%=detail._id%>/edit" class="btn btn-dark offset-2 add-btn">Edit</a>
+    
+    <form method="Post" action="/listings/<%=detail._id%>?_method=DELETE">
+        <button class="btn btn-dark  offset-4">Delete</button>
+    </form>
+    <!-- <a href="/listings" class="btn btn-dark col-1 offset-5">Back</a> -->
+</div>
+
+
+
+
+<div class="col-8 offset-2 mb-1 mt-4 reveee">
+    <%  if(currUser) {  %>
+    <h4>Leave a Review</h4>
+    <form action="/listings/<%=detail.id%>/Reviews" method="Post" novalidate class="needs-validation">
+
+          
+              
+                <!-- <input type="range" min="1" max="5" id="rating" name="Review[rating]" class="form-range"> -->
+            
+
+            <div class="mb-3 mt-3">
+                <label for="rating" class="form-label"><b>Rating</b></label>
+            <fieldset class="starability-slot">
+                <input type="radio" id="no-rate" class="input-no-rate" name="Review[rating]" value="1" checked aria-label="No rating." />
+                <input type="radio" id="first-rate1" name="Review[rating]" value="1" />
+                <label for="first-rate1" title="Terrible">1 star</label>
+                <input type="radio" id="first-rate2" name="Review[rating]" value="2" />
+                <label for="first-rate2" title="Not good">2 stars</label>
+                <input type="radio" id="first-rate3" name="Review[rating]" value="3" />
+                <label for="first-rate3" title="Average">3 stars</label>
+                <input type="radio" id="first-rate4" name="Review[rating]" value="4" />
+                <label for="first-rate4" title="Very good">4 stars</label>
+                <input type="radio" id="first-rate5" name="Review[rating]" value="5" />
+                <label for="first-rate5" title="Amazing">5 stars</label>
+              </fieldset>
+            </div>
+
+
+
+            <div class="mb-3 mt-3">
+                <label for="Comment" class="form-label">Comment</label>
+                <textarea name="Review[Comment]" id="Comment" cols="30" rows="5" class="form-control" required></textarea>
+                <div class="invalid-feedback">
+                    Please Enter some Comments for Review.
+                  </div>
+            </div>
+            <button class="btn btn-success mb-1 mt-3">Submit</button>
+    </form>
+    <% } %>
+
+
+    <hr>
+   
+   <% if(detail.reviews.length>0){%>
+    <div class="row reviewRespon">
+        <p id="reviewPara">ALL Reviews</p>
+        <%for(review of detail.reviews){%>
+            
+            <div class="card col-5  mb-3" id="starss">
+
+                <p class="starability-result card-text reviewStar" data-rating="<%= review.rating%>">
+                </p>
+
+
+                <span id="review-info">
+                    <h5 class="card-title mt-2">@<%= review.author.username%>         :</h5>  <p class="card-text"><%= review.Comment%></p>
+                </span>
+               
+               
+                 
+                <form method="Post" action="/listings/<%=detail._id%>/reviews/<%=review._id%>?_method=DELETE">
+                    <button class="btn btn-sm btn-dark mb-2">Delete</button>
+                </form>
+            </div>
+        <% } %>
+    </div>
+     <% } %>
+
+</div>
+
+
+</div>
+
+
+<div class="col-8 mb-3" id="map1">
+    <h3>Where you 'll be <i class="fa-solid fa-location-crosshairs"></i></h3>
+    <div id="map"></div>
+</div>
+
+
+<script src="/js/map.js"></script>
+</body>

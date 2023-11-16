@@ -1,0 +1,110 @@
+body{
+    font-family: 'Crimson Text', serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+.navbar{
+    background-color: white;
+    padding: 1rem !important;
+}
+.fa-compass{
+    color: #fe424d;
+}
+.nav-link{
+    color: #222222 !important;
+}
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-social{
+ width: 100%;
+ font-size: 1.5rem;
+}
+.f-info-social i{
+    margin-right: 1rem;
+}
+.f-info-links{
+    width: 100%;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.758);
+}
+.f-info-links a:hover{
+ text-decoration: underline;
+}
+.f-info{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items:space-evenly;
+    height: 5rem;
+    background-color: rgba(128, 128, 128, 0.758);
+}
+
+/* //card */
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+.card-img-top{
+    border-radius: 1rem;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text p {
+    font-size: 400 !important;
+}
+
+.listings-links{
+    text-decoration: none;
+}
+/* //card effect */
+
+.card-img-overlay{
+    opacity: 0;
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    color: black !important;
+}
+.card-img-overlay:hover{
+    opacity: 0.1;
+    background-color: white;
+}
+
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* show route */
+.showimg{
+    height: 30vh;
+}
+.btns{
+    display: flex;
+}
+.imgUrl img{
+    width: 30%;
+    height: 30%;
+}
+
+ /* Map */
+
+ #map { 
+   height: 400px;
+   width: 90vh;
+}

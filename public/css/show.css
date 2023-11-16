@@ -1,0 +1,177 @@
+.description{
+    border: 1px solid black;
+    height: 30vh;
+    margin-top: -10px;
+    border-radius: 20px;
+}
+
+.description p{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.card-body{
+    font-size: 1.rem;
+}
+
+#dis{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.info{
+    font-weight: bold;
+}
+.info1{
+    font-size: 1.2rem;
+}
+.info2{
+    margin-top: -20px ;
+    font-size: 1.2rem;
+}
+
+.back-icon{
+    display: none;
+}
+
+.showimg{
+    height: 55vh;
+}
+/* ///icone */
+.icons{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+#mini-title{
+    font-size: 2.3rem;
+    margin-bottom: 19px;
+} 
+.info3{
+    font-size: 2rem;
+}
+#map{
+    height: 500px;
+    width: 100%;
+    border-radius: 1rem;
+     border: 1px solid rgba(0, 128, 0, 0.428);
+}
+
+#map1{
+    margin: auto;
+}
+#map1 h3{
+    margin-left: 20px;
+}
+
+.reviewStar{
+    margin-top: 10px;
+margin-bottom: 4px;
+}
+
+#reviewPara{
+    text-align: center;
+}
+
+#starss{
+    margin: auto;
+
+}
+@media (max-width : 769px){
+
+.back-icon{                      
+    display: block;
+}
+
+.respon{
+    margin-top: 0.7rem ;
+    margin-left: 1rem;
+}
+
+.respon h1{
+    margin-left: -60px;
+    margin-top: 25px;
+}
+.card img{
+    width: 145% !important;
+    margin-left: -70px;
+    height: 36vh;
+}
+.card-body{
+    width: 145%;
+      margin-left: -75px;
+}
+.btns{
+    margin-left: -55px;
+}
+.description{
+    height: 25vh;
+}
+
+
+.reviewRespon p{
+    margin-left: -2px;
+}
+
+.reviewStar{
+    width: 10vw;
+    font-size: 18vw;
+   height: 3vh;
+}
+
+
+
+#mini-title{
+    font-size: 2.0rem;
+    text-align: center;
+} 
+
+.icons{
+    font-size: 0.9rem;
+}
+
+#map{
+    width: 149%;
+    height: 35vh;
+}
+
+
+
+#starss{
+    width: 87vw;
+margin-left: 16px;
+}
+
+
+
+
+
+.reveee{
+    width: 100%;
+margin-left: -13px;
+}
+}
+
+#review-info{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#review-info p{
+    margin-left: 20px;
+font-size: 18px;
+font-weight: bold;
+}
+
+#reviewPara{
+    text-align: center;
+}
+
+
+
+@media(max-width:769px){
+
+#map1 {
+    margin: 0px;
+}
+}
+
