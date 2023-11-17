@@ -8,6 +8,7 @@
     height: 30vh;
     margin-top: -10px;
     border-radius: 20px;
+    overflow: scroll;
 }
 
 .description p{
@@ -34,9 +35,6 @@
     font-size: 1.2rem;
 }
 
-.back-icon{
-    display: none;
-}
 
 .showimg{
     height: 55vh;
@@ -83,9 +81,7 @@ margin-bottom: 4px;
 }
 @media (max-width : 769px){
 
-.back-icon{                      
-    display: block;
-}
+
 
 .respon{
     margin-top: 0.7rem ;
@@ -193,7 +189,7 @@ font-weight: bold;
    </script>
 
     <div class="row mt-3 respon">
-        <div class="back-icon"><a href="http://localhost:8080/listings"><i class="fa-solid fa-chevron-left"></i></a></div>
+        <div class="back-icon"><a href="https://airbnb-suhail-project.onrender.com/listings"><i class="fa-solid fa-chevron-left"></i></a></div>
         <div class="col-8 offset-2">
     <h1><%=detail.title%></h1>
         </div>

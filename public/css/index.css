@@ -119,13 +119,13 @@ overflow: hidden !important;
 
 }
 
-.card-img-top{
+.card-img-topp{
 width: 100% !important;
 height: 20rem !important;
 object-fit: cover !important;
 transition: .5s ease-out 0s;
 }
-.card-img-top:hover{
+.card-img-topp:hover{
 transform: scale(1.125) !important;
 transition: .5s ease-in-out 0s;
 filter: contrast(1.10);

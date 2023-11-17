@@ -107,4 +107,17 @@ body{
  #map { 
    height: 400px;
    width: 90vh;
+   
 }
+
+.back-icon{
+    display: none;
+}
+
+
+@media (max-width : 769px){
+
+    .back-icon{                      
+        display: block;
+    }
+}    
